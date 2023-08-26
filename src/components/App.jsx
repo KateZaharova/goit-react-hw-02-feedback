@@ -1,13 +1,14 @@
 import { FeedbackBtns } from "./FeedbackBtn/FeedbackBtns";
 import { GlobalStyle } from "./GlobalStyle";
+import { Layout } from "./Layout";
 
 export const App = () => {
   return (
-    <div
+    <Layout
       
       style={{
         height: '100vh',
-        //display: 'flex',
+        display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
@@ -17,6 +18,6 @@ export const App = () => {
       React homework template
       <FeedbackBtns />
       <GlobalStyle/>
-    </div>
+    </Layout>
   );
 };

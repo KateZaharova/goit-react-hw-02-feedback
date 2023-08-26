@@ -10,6 +10,9 @@ cursor: pointer;
 :focus{
     background-color:yellow;
 }
+:last-child{
+    margin-right:0;
+}
 `;
 
 export const ListBtn = styled.ul`

@@ -1,31 +1,56 @@
-import {Button, ListBtn, ListItemBtn} from "../FeedbackBtn/FeedbackBtn.styled";
+import {Button} from "../FeedbackBtn/FeedbackBtn.styled";
+import { Component } from "react";
 
-let clicks=5;
 
-export const FeedbackBtns = () => {
-  return (
-    <div>
-      
-      <ListBtn>
+export class FeedbackBtns extends Component {
+  state = {
+  good: 0,
+  neutral: 0,
+  bad: 0
+};
 
-        <ListItemBtn>
-      <h2>Please leave feedback</h2>
-      <Button type="button">Good</Button>
-      <Button type="button">Neutral</Button>
-      <Button type="button">Bad</Button>
-        </ListItemBtn>
-        <ListItemBtn>
+  handleClickGood = () => {
+    this.setState(prevState => ({
+      good: prevState.good += 1,
+    })
+  )};
+
+    handleClickNeutral = () => {
+    this.setState(prevState => ({
+      neutral: prevState.neutral += 1,
+    })
+    )
+  };
+  
+    handleClickBad = () => {
+    this.setState(prevState => ({
+      bad: prevState.bad += 1,
+    })
+    )
+  };
+  
+  countTotalFeedback=()=>{
+    this.handleClickGood + this.handleClickNeutral + this.handleClickBad;
+}
+
+
+  render() {
+    return (
+      <div>
+          <h2>Please leave feedback</h2>
+          <Button onClick={this.handleClickGood}>Good</Button>
+          <Button onClick={this.handleClickNeutral}>Neutral</Button>
+          <Button onClick={this.handleClickBad}>Bad</Button>
+
       <h2>Statistics</h2>
-          <p>Neutral: {clicks}</p>
-      <p>Good: </p>
-      <p>Bad: </p>
-      </ListItemBtn>
-      
-      
-      </ListBtn>
-      
-
-    </div>
+          <p>Good: {this.state.good}</p>
+          <p>Neutral: {this.state.neutral}</p>
+          <p>Bad: {this.state.bad}</p>
+          <p>Total: {this.countTotalFeedback }</p>
+          <p>PositiveFeedback: </p>    
+   </div>
     
     )
+  }
+  
 }
