@@ -3,7 +3,7 @@ import { Component } from "react";
 
 
 export class FeedbackBtns extends Component {
-  state = {
+/*  state = {
     good: 0,
     neutral: 0,
     bad: 0
@@ -26,27 +26,9 @@ export class FeedbackBtns extends Component {
       bad: prevState.bad += 1,
     }))
   };
+  */
+
   
-
-  countTotalFeedback() {
-    let total = 0;
-    let array=[this.state.good,this.state.neutral,this.state.bad]
-    array.forEach(item => {
-      total += item;
-    }); 
-    return total;
-  }
-    
-    countPositiveFeedbackPercentage() {
-      let num = ((this.state.good / this.countTotalFeedback()) * 100); {
-        if (this.countTotalFeedback() === 0) {
-          return 0;
-        } else
-          return num.toFixed(0);
-      }
-         
- }
-
 
   render() {
     return (
