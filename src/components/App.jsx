@@ -47,12 +47,11 @@ countTotalFeedback() {
   }
     
     countPositiveFeedbackPercentage() {
-      let num = ((this.state.good / this.countTotalFeedback()) * 100); {
+      let num = ((this.state.good / this.countTotalFeedback()) * 100); 
         if (this.countTotalFeedback() === 0) {
           return 0;
         } else
           return num.toFixed(0);
-      }
  }
 
   render() {
