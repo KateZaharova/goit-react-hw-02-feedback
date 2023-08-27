@@ -13,34 +13,31 @@ export class App extends Component {
 
   handleClickBtn = buttonType => {
     console.log(buttonType);
-  switch (buttonType) {
-    case "good": {
-      /*this.setState(prevState => ({
-        good: prevState.good += 1,
-      }));*/
-      console.log(this.state.good)
-      break;
-    };
-    case "neutral": {
-     /* this.setState(prevState => ({
-        neutral: prevState.neutral += 1,
-      }));*/
-      console.log(this.state.neutral)
-      break;
-    };
-    case "bad": {
-      /*this.setState(prevState => ({
-        bad: prevState.bad += 1,
-      }));*/
-      console.log(this.state.bad)
-      break;
-    };  
-    default: {
-      console.log("Empty action received.");
-      }  
-      }
+    switch (buttonType) {
+      case "good":
+        /*this.setState(prevState => ({
+          good: prevState.good += 1,
+        }));*/
+        console.log(this.state.good)
+        break;
+      case "neutral":
+        /* this.setState(prevState => ({
+           neutral: prevState.neutral += 1,
+         }));*/
+        console.log(this.state.neutral)
+        break;
+      case "bad":
+        /*this.setState(prevState => ({
+          bad: prevState.bad += 1,
+        }));*/
+        console.log(this.state.bad)
+        break;
+      default:
+        console.log("Empty action received.");
+    }
   }
-   
+        
+/*   
 countTotalFeedback() {
     let total = 0;
     let array=[this.state.good,this.state.neutral,this.state.bad]
@@ -57,7 +54,7 @@ countTotalFeedback() {
         } else
           return num.toFixed(0);
       }
- }
+ }*/
 
   
   render() {
