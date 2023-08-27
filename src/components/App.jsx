@@ -5,7 +5,7 @@ import { Statistics } from "./Statistics";
 import { FeedbackOptions } from "./FeedbackOptions";
 import { Section } from "./Section";
 import { Notification } from "./Notification";
-//import { FeedbackBtns } from "./FeedbackBtn/FeedbackBtns";
+
 
 export class App extends Component {
   state = {
