@@ -11,7 +11,8 @@ export class App extends Component {
     bad: 0
   };
 
-handleClickBtn = buttonType => {
+  handleClickBtn = buttonType => {
+    console.log(buttonType);
   switch (buttonType) {
     case "good": {
       /*this.setState(prevState => ({
