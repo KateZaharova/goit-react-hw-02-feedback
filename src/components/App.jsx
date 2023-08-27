@@ -3,6 +3,7 @@ import { Layout } from "./Layout";
 import { Component } from "react";
 //import { Statistics } from "./Statistics";
 import { FeedbackOptions } from "./FeedbackOptions";
+import { FeedbackBtns } from "./FeedbackBtn/FeedbackBtns";
 
 export class App extends Component {
   state = {
@@ -80,8 +81,9 @@ countTotalFeedback() {
 
 /*<Section>
   title="Please leave feedback">
-          <FeedbackOptions/>
+          <FeedbackOptions onLeaveFeedback={this.handleClickBtn} options={["bad", "neutral", "good"]} />
             <Statistics/>
+            <FeedbackBtns/>
 <Section/>   тільки додаешь умови до фідбек та статистику
 А в файлі Section
 const Section = ({ title, children }) => (
