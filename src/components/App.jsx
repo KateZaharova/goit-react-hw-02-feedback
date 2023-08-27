@@ -1,9 +1,12 @@
 import { FeedbackBtns } from "./FeedbackBtn/FeedbackBtns";
 import { GlobalStyle } from "./GlobalStyle";
 import { Layout } from "./Layout";
+import { Component } from "react";
 
-export const App = () => {
-  return (
+
+export class App extends Component {
+  render() {
+    return (
     <Layout
       
       style={{
@@ -20,4 +23,6 @@ export const App = () => {
       <GlobalStyle/>
     </Layout>
   );
+  }
+  
 };
