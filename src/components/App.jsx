@@ -1,9 +1,11 @@
 import { GlobalStyle } from "./GlobalStyle";
 import { Layout } from "./Layout";
 import { Component } from "react";
-//import { Statistics } from "./Statistics";
+import { Statistics } from "./Statistics";
 import { FeedbackOptions } from "./FeedbackOptions";
-import { FeedbackBtns } from "./FeedbackBtn/FeedbackBtns";
+import { Section } from "./Section";
+import { Notification } from "./Notification";
+//import { FeedbackBtns } from "./FeedbackBtn/FeedbackBtns";
 
 export class App extends Component {
   state = {
@@ -13,32 +15,28 @@ export class App extends Component {
   };
 
   handleClickBtn = buttonType => {
-    console.log(buttonType);
     switch (buttonType) {
       case "good":
-        /*this.setState(prevState => ({
+        this.setState(prevState => ({
           good: prevState.good += 1,
-        }));*/
-        console.log(this.state.good)
+        }));
         break;
       case "neutral":
-        /* this.setState(prevState => ({
+        this.setState(prevState => ({
            neutral: prevState.neutral += 1,
-         }));*/
-        console.log(this.state.neutral)
+         }));
         break;
       case "bad":
-        /*this.setState(prevState => ({
+        this.setState(prevState => ({
           bad: prevState.bad += 1,
-        }));*/
-        console.log(this.state.bad)
+        }));
         break;
       default:
         console.log("Empty action received.");
     }
   }
         
-/*   
+
 countTotalFeedback() {
     let total = 0;
     let array=[this.state.good,this.state.neutral,this.state.bad]
@@ -55,24 +53,29 @@ countTotalFeedback() {
         } else
           return num.toFixed(0);
       }
- }*/
+ }
 
-  
   render() {
+    let statisticOption;
+      if (this.countTotalFeedback() === 0) {
+          statisticOption=<Section title={"Statistics"} children={<Notification message="There is no feedback"/>}/>
+        } else {
+          statisticOption=<Section title={"Statistics"} children={<Statistics good={this.state.good} neutral={this.state.neutral} bad={this.state.bad} total={this.countTotalFeedback()} positivePercentage={this.countPositiveFeedbackPercentage()} />} />
+    };  
     return (
     <Layout
        style={{
-        height: '100vh',
+        //height: '100vh',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
         color: '#010101'
-      }}
-    >
-      React homework template
-        <FeedbackOptions onLeaveFeedback={this.handleClickBtn} options={["bad", "neutral", "good"]} />
-        <GlobalStyle/>
+      }}>
+        <h1>"Hello mentor!"</h1> 
+        <Section title={"Please leave feedback"} children={<FeedbackOptions onLeaveFeedback={this.handleClickBtn} options={["good", "neutral", "bad"]} />} />
+        {statisticOption}    
+        <GlobalStyle />
     </Layout>
   );
   }
@@ -82,7 +85,7 @@ countTotalFeedback() {
 /*<Section>
   title="Please leave feedback">
           <FeedbackOptions onLeaveFeedback={this.handleClickBtn} options={["bad", "neutral", "good"]} />
-            <Statistics/>
+            
             <FeedbackBtns/>
 <Section/>   тільки додаешь умови до фідбек та статистику
 А в файлі Section
@@ -93,6 +96,3 @@ const Section = ({ title, children }) => (
   </div>
 ); */
 
-/*
- <!-- FeedbackBtns / 
- <Statistics />-->*/
