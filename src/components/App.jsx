@@ -81,17 +81,5 @@ countTotalFeedback() {
   
 };
 
-/*<Section>
-  title="Please leave feedback">
-          <FeedbackOptions onLeaveFeedback={this.handleClickBtn} options={["bad", "neutral", "good"]} />
-            
-            <FeedbackBtns/>
-<Section/>   тільки додаешь умови до фідбек та статистику
-А в файлі Section
-const Section = ({ title, children }) => (
-  <div className='section'>
-    <h2 className='section-title'>{title}</h2>
-    {children}
-  </div>
-); */
+
 
